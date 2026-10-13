@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: marathon-photo-wall
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: UPLOAD_CODE
+        sync: false
+      - key: AUTO_APPROVE
+        value: 'false'

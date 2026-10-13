@@ -1,0 +1,25 @@
+马拉松照片墙：最简上线步骤（Render 免费子域名）
+
+第一步：打开 https://github.com/new 并登录 GitHub
+- Repository name 填：marathon-photo-wall
+- 选 Private（私有）
+- 点 Create repository
+- 在新仓库页面点 uploading an existing file 或 Add file > Upload files
+- 把本压缩包解压后的 render.yaml、server.js、package.json 以及 public 文件夹中的 3 个 html 页面上传。注意 public 文件夹的三个文件要放在 public 目录里。
+- 点 Commit changes
+
+第二步：打开 https://dashboard.render.com/blueprints
+- 点 New Blueprint Instance（按钮名称以页面为准）
+- 授权连接 GitHub，选择刚才建的 marathon-photo-wall 仓库
+- Render 将识别 render.yaml，选择 Deploy / Apply
+- 如果 Render 要求填两项变量：
+  ADMIN_PASSWORD：你自己设置管理员密码（不要公开）
+  UPLOAD_CODE：你自己设置给摄影师使用的上传口令
+- 等部署状态变成 Live
+
+第三步：复制 Render 分配的 https://xxxx.onrender.com 地址
+- 大屏观看：https://xxxx.onrender.com/
+- 摄影师上传：https://xxxx.onrender.com/upload.html
+- 工作人员审核：https://xxxx.onrender.com/admin.html
+
+非常重要：Render 免费 Web Service 本地文件是临时的，休眠/重启/重新部署会清除已上传图片。本包是测试体验版，比赛当天使用前需要接入持久化图片存储或者改用自己的电脑局域网部署。不要依赖免费版保存赛事照片。 
